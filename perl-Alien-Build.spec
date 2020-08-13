@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:           perl-Alien-Build
 Version:        2.28
-Release:        1
+Release:        2
 Summary:        Alien::Build Perl module
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/Alien-Build
@@ -23,7 +23,6 @@ BuildRequires:  perl(PkgConfig::LibPkgConf::Util) >= 0.04
 BuildRequires:  perl(Test2::API) >= 1.302096
 BuildRequires:  perl(Test2::V0) >= 0.000060
 Requires:       gcc
-Requires:       perl(Alien::Build::Plugin::Decode::Mojo)
 Requires:       perl(PkgConfig::LibPkgConf::Client) >= 0.04
 Requires:       perl(PkgConfig::LibPkgConf::Util) >= 0.04
 Requires:       perl(Test2::API) >= 1.302096
@@ -37,9 +36,6 @@ client, and work closely with Alien::Base which is used at run time.
 Summary:        Alien::Build plugin to extract links from HTML
 Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires:       perl(:MODULE_COMPAT_%(eval "`perl -V:version`"; echo $version))
-Requires:       perl(HTML::LinkExtor)
-Requires:       perl(URI)
-Requires:       perl(URI::Escape)
 Conflicts:      perl-Alien-Build < 1.76
  
 %description Plugin-Decode-HTML
@@ -50,10 +46,6 @@ candidates for your Prefer plugin.
 Summary:        Alien::Build plugin to extract links from HTML
 Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires:       perl(:MODULE_COMPAT_%(eval "`perl -V:version`"; echo $version))
-Requires:       perl(Mojo::DOM)
-Requires:       perl(Mojolicious) >= 7.00
-Requires:       perl(URI)
-Requires:       perl(URI::Escape)
  
 %description Plugin-Decode-Mojo
 This Alien::Build plugin decodes an HTML file listing into a list of
@@ -131,5 +123,8 @@ make test
 %{_mandir}/*
 
 %changelog
+* Thu Aug 13 2020 dingyue<dingyue5@huawei.com> - 2.28-2
+- delete requires 
+
 * Fri Aug 7 2020 dingyue<dingyue5@huawei.com> - 2.28-1
 - Package Init 
