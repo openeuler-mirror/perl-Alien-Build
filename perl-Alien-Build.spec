@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:           perl-Alien-Build
-Version:        2.28
-Release:        2
+Version:        2.41
+Release:        1
 Summary:        Alien::Build Perl module
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/Alien-Build
@@ -123,6 +123,9 @@ make test
 %{_mandir}/*
 
 %changelog
+* Mon Jul 19 2021 Xu Jin <jinxu@kylinos.cn> - 2.41-1
+- Update package to 2.41
+
 * Thu Aug 13 2020 dingyue<dingyue5@huawei.com> - 2.28-2
 - delete requires 
 
