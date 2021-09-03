@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:           perl-Alien-Build
 Version:        2.41
-Release:        1
+Release:        2
 Summary:        Alien::Build Perl module
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/Alien-Build
@@ -16,6 +16,7 @@ BuildRequires:  perl-interpreter
 BuildRequires:  perl(ExtUtils::CBuilder)
 BuildRequires:  perl(Capture::Tiny) >= 0.17
 BuildRequires:  perl(FFI::CheckLib)
+BuildRequires:  perl(File::Which)
 BuildRequires:  perl-File-chdir
 BuildRequires:  perl(Path::Tiny) >= 0.077
 BuildRequires:  perl(PkgConfig::LibPkgConf::Client) >= 0.04
@@ -123,6 +124,9 @@ make test
 %{_mandir}/*
 
 %changelog
+* Fri Sep 3 2021 jiangxinyu <jiangxinyu@kylinos.cn> - 2.41-2
+- Solve the problem of missing 'File::Which' module when compiling
+
 * Mon Jul 19 2021 Xu Jin <jinxu@kylinos.cn> - 2.41-1
 - Update package to 2.41
 
